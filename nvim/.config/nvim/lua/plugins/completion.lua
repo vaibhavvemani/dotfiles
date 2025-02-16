@@ -36,6 +36,9 @@ return {
           basedpyright = {
             extra_info_hl = "@comment",
           },
+          pyright = {
+            extra_info_hl = "@comment",
+          },
 
           fallback = true,
         },

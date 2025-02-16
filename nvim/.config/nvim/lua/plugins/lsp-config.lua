@@ -9,7 +9,7 @@ return {
 		"williamboman/mason-lspconfig.nvim",
 		config = function()
 			require("mason-lspconfig").setup({
-				ensure_installed = { "lua_ls", "html", "eslint", "basedpyright" },
+				ensure_installed = { "lua_ls", "html", "eslint", "pyright" },
 			})
 		end,
 	},
@@ -19,7 +19,7 @@ return {
 			local lspconfig = require("lspconfig")
 			local capabilities = require("blink.cmp").get_lsp_capabilities()
 			lspconfig.lua_ls.setup({ capabilities = capabilities })
-			lspconfig.basedpyright.setup({ capabilities = capabilities })
+			lspconfig.pyright.setup({ capabilities = capabilities })
 			lspconfig.eslint.setup({ capabilities = capabilities })
 
 			vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
