@@ -5,6 +5,15 @@ return {
     config = function()
       require("colorful-menu").setup({
         ls = {
+          html = {
+            extra_info_hl = "@comment",
+          },
+          cssls = {
+            extra_info_hl = "@comment",
+          },
+          tailwindcss = {
+            extra_info_hl = "@comment",
+          },
           lua_ls = {
             arguments_hl = "@comment",
           },

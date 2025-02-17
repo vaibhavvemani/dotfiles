@@ -30,8 +30,8 @@ vim.opt.signcolumn = "yes"                      -- Enable the sign column to pre
 vim.opt.colorcolumn = "120"                     -- Place a column line
 vim.opt.textwidth = 118                         -- Set textwidth to 118 to wrap the text after 118 characters
 vim.opt.completeopt = { "menuone", "noselect" } -- mostly just for cmp
+vim.opt.clipboard = "unnamedplus"
 -- For Lua
-vim.opt.runtimepath:append "/home/suyash/.config/nvim/lua"
 
 -- Disable netrw at the very start of your init.lua (strongly advised)
 vim.g.loaded_netrw = 1
