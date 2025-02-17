@@ -17,10 +17,6 @@ return {
           lua_ls = {
             arguments_hl = "@comment",
           },
-          gopls = {
-            align_type_to_right = true,
-            add_colon_before_type = false,
-          },
           ts_ls = {
             extra_info_hl = "@comment",
           },
@@ -40,9 +36,6 @@ return {
             align_type_to_right = true,
           },
           roslyn = {
-            extra_info_hl = "@comment",
-          },
-          basedpyright = {
             extra_info_hl = "@comment",
           },
           pyright = {
@@ -79,16 +72,13 @@ return {
             },
           },
         },
-        ghost_text = {
-          enabled = true
-        }
       },
       signature = { window = { border = "single" } },
       keymap = { preset = "super-tab" },
 
       appearance = {
         use_nvim_cmp_as_default = true,
-        nerd_font_variant = "JetBrainsMono",
+        nerd_font_variant = "JetBrains Mono",
       },
       sources = {
         default = { "lsp", "path", "snippets", "buffer" },
