@@ -1,7 +1,7 @@
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
-vim.keymap.set({ "n", "v" }, "<Space>", "<Nop>", { silent = true})
+vim.keymap.set({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
 
 local opts = { noremap = true, silent = true }
 
@@ -33,8 +33,8 @@ vim.keymap.set('n', '<leader>bn', '<cmd> enew <CR>', opts) -- new buffer
 vim.keymap.set('n', '<leader>bx', ':bdelete!<CR>', opts)   -- close buffer
 
 -- Window management
-vim.keymap.set('n', '<leader>wv', '<C-w>v', opts)      -- split window vertically
-vim.keymap.set('n', '<leader>wh', '<C-w>s', opts)      -- split window horizontally
+vim.keymap.set('n', '<leader>wv', '<C-w>v', opts)     -- split window vertically
+vim.keymap.set('n', '<leader>wh', '<C-w>s', opts)     -- split window horizontally
 vim.keymap.set('n', '<leader>we', '<C-w>=', opts)     -- make split windows equal width & height
 vim.keymap.set('n', '<leader>wx', ':close<CR>', opts) -- close current split window
 
@@ -79,9 +79,9 @@ vim.keymap.set('n', '<leader>do', function()
   diagnostics_active = not diagnostics_active
 
   if diagnostics_active then
-    vim.diagnostic.enable(0)
+    vim.diagnostic.enable(true)
   else
-    vim.diagnostic.disable(0)
+    vim.diagnostic.enable(false)
   end
 end)
 

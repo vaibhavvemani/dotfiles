@@ -15,20 +15,6 @@ return {
   {
     -- Hints keybinds
     'folke/which-key.nvim',
-    opts = {
-      -- win = {
-      --   border = {
-      --     { '┌', 'FloatBorder' },
-      --     { '─', 'FloatBorder' },
-      --     { '┐', 'FloatBorder' },
-      --     { '│', 'FloatBorder' },
-      --     { '┘', 'FloatBorder' },
-      --     { '─', 'FloatBorder' },
-      --     { '└', 'FloatBorder' },
-      --     { '│', 'FloatBorder' },
-      --   },
-      -- },
-    },
   },
   {
     -- Autoclose parentheses, brackets, quotes, etc.
@@ -38,10 +24,13 @@ return {
     opts = {},
   },
   {
-    -- high-performance color highlighter
-    'norcalli/nvim-colorizer.lua',
+    'nvimdev/dashboard-nvim',
+    event = 'VimEnter',
     config = function()
-      require('colorizer').setup()
+      require('dashboard').setup {
+        -- config
+      }
     end,
+    dependencies = { {'nvim-tree/nvim-web-devicons'}}
   },
 }

@@ -6,16 +6,17 @@ return {
   },
   config = function()
     -- vim.opt.linespace = 8
+    local mocha = require("catppuccin.palettes").get_palette "mocha"
 
     require('bufferline').setup {
       options = {
-        mode = 'buffers', -- set to "tabs" to only show tabpages instead
-        themable = true, -- allows highlight groups to be overriden i.e. sets highlights as default
-        numbers = 'none', -- | "ordinal" | "buffer_id" | "both" | function({ ordinal, id, lower, raise }): string,
-        close_command = 'Bdelete! %d', -- can be a string | function, see "Mouse actions"
+        mode = 'buffers',                    -- set to "tabs" to only show tabpages instead
+        themable = true,                     -- allows highlight groups to be overriden i.e. sets highlights as default
+        numbers = 'none',                    -- | "ordinal" | "buffer_id" | "both" | function({ ordinal, id, lower, raise }): string,
+        close_command = 'Bdelete! %d',       -- can be a string | function, see "Mouse actions"
         right_mouse_command = 'Bdelete! %d', -- can be a string | function, see "Mouse actions"
-        left_mouse_command = 'buffer %d', -- can be a string | function, see "Mouse actions"
-        middle_mouse_command = nil, -- can be a string | function, see "Mouse actions"
+        left_mouse_command = 'buffer %d',    -- can be a string | function, see "Mouse actions"
+        middle_mouse_command = nil,          -- can be a string | function, see "Mouse actions"
         -- buffer_close_icon = '󰅖',
         buffer_close_icon = '✗',
         -- buffer_close_icon = '✕',
@@ -26,7 +27,7 @@ return {
         right_trunc_marker = '',
         max_name_length = 30,
         max_prefix_length = 30, -- prefix used when a buffer is de-duplicated
-        tab_size = 21,
+        tab_size = 20,
         diagnostics = false,
         diagnostics_update_in_insert = false,
         color_icons = true,
@@ -48,20 +49,34 @@ return {
         maximum_length = 15,
         sort_by = 'insert_at_end',
       },
-      highlights = {
-        separator = {
-          fg = '#434C5E',
+      highlights = require("catppuccin.groups.integrations.bufferline").get {
+        styles = { "italic", "bold" },
+        custom = {
+          all = {
+            fill = { bg = "#000000" },
+          },
+          mocha = {
+            background = { fg = mocha.text },
+          },
+          latte = {
+            background = { fg = "#000000" },
+          },
         },
-        buffer_selected = {
-          bold = true,
-          italic = false,
-        },
-        -- separator_selected = {},
-        -- tab_selected = {},
-        -- background = {},
-        -- indicator_selected = {},
-        -- fill = {},
       },
+      -- highlights = {
+      --   separator = {
+      --     fg = '#434C5E',
+      --   },
+      --   buffer_selected = {
+      --     bold = true,
+      --     italic = false,
+      --   },
+      --   -- separator_selected = {},
+      --   -- tab_selected = {},
+      --   -- background = {},
+      --   -- indicator_selected = {},
+      --   -- fill = {},
+      -- },
     }
 
     -- Keymaps
