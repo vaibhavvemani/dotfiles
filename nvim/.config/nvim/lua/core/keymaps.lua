@@ -5,9 +5,12 @@ vim.keymap.set({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
 
 local opts = { noremap = true, silent = true }
 
+-- Navigating Ntree
+vim.keymap.set("n", "<leader>e", "<cmd>Ntree<CR>", opts)
+
 -- Save, Quit file
-vim.keymap.set("n", "<leader>w", "<cmd>w <CR>", opts)
-vim.keymap.set("n", "<leader>q", "<cmd>q <CR>", opts)
+vim.keymap.set("n", "<leader>w", "<cmd>w<CR>", opts)
+vim.keymap.set("n", "<leader>q", "<cmd>qa<CR>", opts)
 
 -- delete single character without copying it
 vim.keymap.set('n', 'x', '"_x', opts)
