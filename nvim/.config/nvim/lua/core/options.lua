@@ -34,3 +34,4 @@ vim.o.pumheight = 10
 vim.o.conceallevel = 0
 vim.o.fileencoding = 'utf-8'
 vim.o.autoindent = true
+vim.o.laststatus = 0

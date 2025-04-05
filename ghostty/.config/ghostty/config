@@ -1,0 +1,34 @@
+font-family = JetBrainsMono NFM Medium
+font-size = 14
+theme = GruvboxDarkHard
+background = 101010
+macos-icon = xray
+
+shell-integration-features = no-cursor,sudo,no-title
+cursor-style = block
+
+clipboard-trim-trailing-spaces
+macos-titlebar-style = transparent
+
+mouse-hide-while-typing = true
+window-save-state = always
+window-padding-balance = true
+split-divider-color = 303030
+
+keybind = ctrl+shift+j=goto_split:bottom
+keybind = ctrl+shift+k=goto_split:top
+keybind = ctrl+shift+l=goto_split:right
+keybind = ctrl+shift+h=goto_split:left
+
+keybind = ctrl+s>s=new_split:right
+keybind = ctrl+s>d=new_split:down
+
+keybind = ctrl+shift+left=resize_split:left,10
+keybind = ctrl+shift+up=resize_split:up,10
+keybind = ctrl+shift+down=resize_split:down,10
+keybind = ctrl+shift+right=resize_split:right,10
+
+keybind = ctrl+s>z=toggle_split_zoom
+keybind = ctrl+s>e=equalize_splits
+
+copy-on-select = clipboard

@@ -36,9 +36,9 @@ vim.keymap.set('n', '<leader>bn', '<cmd> enew <CR>', opts) -- new buffer
 vim.keymap.set('n', '<leader>bb', ':bdelete!<CR>', opts)   -- close buffer
 
 -- Window management
-vim.keymap.set('n', '<leader>wv', '<C-w>v', opts)     -- split window vertically
-vim.keymap.set('n', '<leader>wh', '<C-w>s', opts)     -- split window horizontally
-vim.keymap.set('n', '<leader>we', '<C-w>=', opts)     -- make split windows equal width & height
+vim.keymap.set('n', '<C-w>v', '<C-w>v', opts)     -- split window vertically
+vim.keymap.set('n', '<C-w>c', '<C-w>s', opts)     -- split window horizontally
+vim.keymap.set('n', '<C-w>e', '<C-w>=', opts)     -- make split windows equal width & height
 vim.keymap.set('n', '<leader>ww', ':close<CR>', opts) -- close current split window
 
 -- Navigate between splits
