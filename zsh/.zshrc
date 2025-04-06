@@ -1,28 +1,51 @@
-export NVM_DIR="$HOME/.nvm"
+# ---------------------------
+# Minimal ZSH Init
+# ---------------------------
 
+# Silence "Last login" message (handled via hushlogin file)
+# Ensure this is run once in terminal:
+# touch ~/.hushlogin
+
+# ---------------------------
+# Starship Prompt FIRST
+# ---------------------------
+eval "$(starship init zsh)"
+
+# ---------------------------
+# Zoxide
+# ---------------------------
+eval "$(zoxide init zsh)"
+
+# ---------------------------
+# NVM (Node Version Manager)
+# ---------------------------
+export NVM_DIR="$HOME/.nvm"
 [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && . "/opt/homebrew/opt/nvm/nvm.sh"
 [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && . "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"
 
-eval "$(starship init zsh)"
-eval "$(zoxide init zsh)"
-
-# pnpm
-export PNPM_HOME="/Users/vaibhavvemani/Library/pnpm"
+# ---------------------------
+# PNPM
+# ---------------------------
+export PNPM_HOME="$HOME/Library/pnpm"
 case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
-# pnpm end
 
-# bun completions
-[ -s "/Users/vaibhavvemani/.bun/_bun" ] && source "/Users/vaibhavvemani/.bun/_bun"
-
-# bun
+# ---------------------------
+# Bun
+# ---------------------------
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+[ -s "$BUN_INSTALL/_bun" ] && source "$BUN_INSTALL/_bun"
 
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
+# ---------------------------
+# Conda
+# ---------------------------
+# Prevent Conda from modifying prompt
+export CONDA_CHANGEPS1=false
+
+# Conda init (slow-ish, so keep low in file)
 __conda_setup="$('/opt/homebrew/Caskroom/miniconda/base/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
@@ -34,5 +57,3 @@ else
     fi
 fi
 unset __conda_setup
-# <<< conda initialize <<<
-

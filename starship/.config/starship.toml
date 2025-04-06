@@ -1,46 +1,82 @@
-format = """
-$username\
-$hostname\
-$directory\
-$git_branch\
-$git_state\
-$git_status\
-$cmd_duration\
-$line_break\
-$python\
-$character"""
+"$schema" = 'https://starship.rs/config-schema.json'
 
-[directory]
-style = "blue"
+format = "$os -> $username -> $directory $line_break$character"
+
+right_format = "$git_branch$git_status $conda $nodejs $bun $rust $python"
+
+palette = 'gruvbox_hard'
+
+[palettes.gruvbox_hard]
+color_fg0 = '#fbf1c7'
+color_bg1 = '#1d2021'
+color_bg3 = '#3c3836'
+color_blue = '#83a598'
+color_aqua = '#8ec07c'
+color_green = '#b8bb26'
+color_orange = '#fe8019'
+color_purple = '#d3869b'
+color_red = '#fb4934'
+color_yellow = '#fabd2f'
 
 [character]
-success_symbol = "[❯](purple)"
-error_symbol = "[❯](red)"
-vimcmd_symbol = "[❮](green)"
+success_symbol = '[->](fg:color_green)'
+error_symbol = '[->](fg:color_red)'
+vimcmd_symbol = '[->](fg:color_purple)'
+
+[os]
+disabled = false
+style = "bold fg:color_orange"
+format = "[$symbol]($style)"
+[os.symbols]
+Macos = "󰀵"
+Linux = "󰌽"
+Windows = "󰍲"
+
+[username]
+show_always = true
+style_user = "bold fg:color_orange"
+format = "[$user]($style)"
+
+[directory]
+format = '[$path]($style)'
+style = "bold fg:color_blue"
+truncation_length = 5
+truncation_symbol = "…/"
 
 [git_branch]
-format = "[$branch]($style)"
-style = "bright-black"
+symbol = ""
+format = '[$symbol $branch]($style)'
+style = "fg:color_aqua"
 
 [git_status]
-format = "[[(*$conflicted$untracked$modified$staged$renamed$deleted)](218) ($ahead_behind$stashed)]($style)"
-style = "cyan"
-conflicted = "​"
-untracked = "​"
-modified = "​"
-staged = "​"
-renamed = "​"
-deleted = "​"
-stashed = "≡"
+format = '([$all_status]($style))'
+style = "fg:color_bg3"
 
-[git_state]
-format = '\([$state( $progress_current/$progress_total)]($style)\) '
-style = "bright-black"
+[nodejs]
+format = '[node $version]($style)'
+style = "fg:color_green"
 
-[cmd_duration]
-format = "[$duration]($style) "
-style = "yellow"
+[bun]
+format = '[bun $version]($style)'
+style = "fg:color_green"
+
+[rust]
+format = '[rs $version]($style)'
+style = "fg:color_orange"
 
 [python]
-format = "[$virtualenv]($style) "
-style = "bright-black"
+format = '[py $version]($style)'
+style = "fg:color_yellow"
+
+[conda]
+symbol = '🅒 '
+format = '[$symbol$environment]($style)'
+style = "fg:color_yellow"
+ignore_base = false
+
+[time]
+disabled = true
+format = '[ $time]($style)'
+time_format = "%R"
+style = "fg:color_bg3"
+
