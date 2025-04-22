@@ -1,11 +1,9 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
 format = "$os -> $username -> $directory $line_break$character"
-
-right_format = "$git_branch$git_status $conda $nodejs $bun $rust $python"
+right_format = "$git_branch$git_status $python $conda"
 
 palette = 'gruvbox_hard'
-
 [palettes.gruvbox_hard]
 color_fg0 = '#fbf1c7'
 color_bg1 = '#1d2021'
@@ -50,33 +48,14 @@ style = "fg:color_aqua"
 
 [git_status]
 format = '([$all_status]($style))'
-style = "fg:color_bg3"
+style = "fg:color_purple"
 
-[nodejs]
-format = '[node $version]($style)'
-style = "fg:color_green"
-
-[bun]
-format = '[bun $version]($style)'
-style = "fg:color_green"
-
-[rust]
-format = '[rs $version]($style)'
-style = "fg:color_orange"
+[conda]
+format = '[$environment]($style)'
+style = "fg:color_yellow"
+ignore_base = true
 
 [python]
 format = '[py $version]($style)'
 style = "fg:color_yellow"
-
-[conda]
-symbol = '🅒 '
-format = '[$symbol$environment]($style)'
-style = "fg:color_yellow"
-ignore_base = false
-
-[time]
-disabled = true
-format = '[ $time]($style)'
-time_format = "%R"
-style = "fg:color_bg3"
 
